@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "lib": [
+      "dom",
+      "es2017",
+      "dom.iterable"
+    ],
+    "baseUrl": "src",
+    "paths": {
+      "@app/*": ["app/*"],
+      "@components/*": ["components/*"],
+      "@features/*": ["features/*"],
+      "@images/*": ["images/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}

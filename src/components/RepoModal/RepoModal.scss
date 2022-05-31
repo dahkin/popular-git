@@ -1,0 +1,41 @@
+@use "src/styles/mixins";
+
+.repo-modal {
+  position: relative;
+  background: var(--item-background-color);
+  min-height: 100%;
+  padding: 56px 20px 20px;
+  box-sizing: border-box;
+
+  @include mixins.for-tablet {
+    padding: 130px 40px 40px;
+  }
+
+  @include mixins.for-desktop {
+    padding: 80px 30px 30px;
+    width: 724px;
+  }
+}
+
+.repo-modal__close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 24px;
+
+  @include mixins.for-tablet {
+    top: 50px;
+    right: 40px;
+    width: 40px;
+  }
+
+  @include mixins.for-desktop {
+    top: 20px;
+    right: 20px;
+    width: 40px;
+  }
+}
+
+.repo-modal__close-btn-icon {
+  width: 100%;
+}

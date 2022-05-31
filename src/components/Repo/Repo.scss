@@ -1,0 +1,21 @@
+@use "src/styles/mixins";
+
+// Repo
+.repo-item {
+  min-width: 100%;
+  background: var(--item-background-color);
+  -webkit-tap-highlight-color: transparent; /* for removing the highlight on mobile */
+  padding: 20px 46px;
+  cursor: pointer;
+  user-select: none;
+  box-sizing: border-box;
+
+  @include mixins.for-tablet {
+    padding: 30px 107px;
+  }
+
+  @include mixins.for-desktop {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}

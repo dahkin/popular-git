@@ -1,0 +1,91 @@
+@use "src/styles/mixins";
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+:root {
+  --constant-accent: #0083fc;
+  --constant-white: #fff;
+  --constant-white-transparent-64: rgb(255 255 255 / 64%);
+  --constant-grey: #eaeaea;
+  --constant-grey-1: #b5b5b5;
+  --constant-grey-2: #1e2028;
+  --constant-black: #262a2f;
+  --constant-black-transparent-90: rgb(0 0 0 / 90%);
+  --constant-black-transparent-30: rgb(0 0 0 / 30%);
+  --skeleton-gradient: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--constant-white-transparent-64) 30%,
+    transparent 60%
+  );
+  --font-main: "Roboto Mono", monospace;
+  --font-secondary: Rubik, sans-serif;
+
+  @media (prefers-color-scheme: dark) {
+    --text-color: var(--constant-white);
+    --background-color: var(--constant-black);
+    --item-background-color: var(--constant-grey-2);
+    --hover-background-color: var(--constant-black-transparent-30);
+  }
+
+  @media (prefers-color-scheme: light) {
+    --text-color: var(--constant-black);
+    --background-color: var(--constant-white);
+    --item-background-color: var(--constant-grey);
+    --hover-background-color: var(--constant-white-transparent-64);
+  }
+}
+
+*:not(svg *) {
+  all: unset;
+  display: revert;
+}
+
+svg path {
+  fill: currentColor;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+
+  &:hover {
+    opacity: 0.8;
+    transition: all 0.3s ease;
+  }
+}
+
+a {
+  color: var(--constant-accent);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.--prevent-scroll {
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--text-color);
+  background: var(--background-color);
+
+  @include mixins.for-tablet {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  @include mixins.for-desktop {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}

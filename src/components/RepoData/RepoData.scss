@@ -1,0 +1,105 @@
+@use "src/styles/mixins";
+
+// Repo
+.repo {
+  display: flex;
+  flex-direction: column;
+}
+
+// Extended
+.repo--extended {
+  gap: 12px;
+
+  @include mixins.for-tablet {
+    gap: 20px;
+  }
+
+  .repo-title {
+    font-size: 30px;
+    line-height: 36px;
+
+    @include mixins.for-tablet {
+      font-size: 40px;
+      line-height: 47px;
+    }
+  }
+}
+
+// Short
+.repo--short {
+  gap: 8px;
+
+  @include mixins.for-tablet {
+    gap: 12px;
+  }
+
+  @include mixins.for-desktop {
+    gap: 16px;
+  }
+
+  .repo__title {
+    @include mixins.text-overflow;
+  }
+
+  .repo__description {
+    @include mixins.text-clamp(4);
+
+    @include mixins.for-tablet {
+      @include mixins.text-clamp(3);
+    }
+
+    @include mixins.for-desktop {
+      @include mixins.text-clamp(2);
+    }
+  }
+}
+
+.repo__title {
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: var(--constant-accent);
+
+  @include mixins.for-tablet {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  @include mixins.for-desktop {
+    font-size: 40px;
+    line-height: 47px;
+  }
+}
+
+// Tags
+.repo__tag-group {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 4px;
+}
+
+.repo__tag {
+  padding: 4px 8px;
+  background: var(--constant-accent);
+  color: var(--constant-white);
+  border-radius: 8px;
+
+  @include mixins.for-desktop {
+    font-size: 16px;
+  }
+}
+
+// Extra data
+.repo__data {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.repo__data-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}

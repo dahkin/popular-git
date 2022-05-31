@@ -1,0 +1,27 @@
+// Mixins
+@mixin for-tablet {
+  @media only screen and (min-width: 744px) {
+    @content;
+  }
+}
+
+@mixin for-desktop {
+  @media only screen and (min-width: 1280px) {
+    @content;
+  }
+}
+
+// For text
+@mixin text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin text-clamp($counter) {
+  // stylelint-disable-next-line value-no-vendor-prefix
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $counter;
+}

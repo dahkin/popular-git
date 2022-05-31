@@ -1,0 +1,29 @@
+stages:
+  - test
+  - deploy
+
+code_quality:
+  image: node:14.17.4
+  stage: test
+  before_script:
+    - npm ci
+  script:
+    - npm run eslint
+    - npm run stylelint
+    - npm run prettier-check
+  only:
+    - merge_requests
+
+pages:
+  image: node:14.17.4
+  stage: deploy
+  before_script:
+    - npm install
+  script:
+    - npm run build
+    - cp -r dist public
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
