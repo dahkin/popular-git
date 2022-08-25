@@ -1,3 +1,5 @@
 # popular git repos
 
-Учебный проект
+Learning project
+
+To start: npm run start

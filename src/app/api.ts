@@ -7,7 +7,7 @@ export const apiFetchRepos = (): Promise<RepoAPI[]> => {
   return fetch(`https://api.github.com/search/repositories?q=stars:>1+language:javascript&sort=stars&order=desc`, {
     headers: new Headers({
       Accept: 'application/vnd.github.v3+json',
-      Authorization: 'token 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',
+      Authorization: 'token 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',
     }),
   })
     .then((response) => response.json())
