@@ -5,7 +5,9 @@
     "prettier": "prettier --write ./",
     "prettier-check": "prettier --check ./",
     "start": "NODE_ENV=development webpack serve",
-    "build": "webpack"
+    "build": "webpack",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@babel/cli": "7.15.7",
@@ -60,7 +62,8 @@
     "postcss": "^8.4.14",
     "postcss-loader": "^7.0.0",
     "ts-loader": "^9.2.6",
-    "typescript": "^4.4.3"
+    "typescript": "^4.4.3",
+    "gh-pages": "^4.0.0"
   },
   "pre-commit": [
     "stylelint",
